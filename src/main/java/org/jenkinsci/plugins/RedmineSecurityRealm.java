@@ -179,11 +179,7 @@ public class RedmineSecurityRealm extends SecurityRealm {
             }
 
             UserDetails userDetails = loadUserByUsername(auth.getName());
-            if (userDetails != null) {
-                SecurityListener.fireAuthenticated(userDetails);
-            } else {
-                LOGGER.log(Level.SEVERE, "doFinishLogin() userDetails = null");
-            }
+            SecurityListener.fireAuthenticated(userDetails);
         } else {
             LOGGER.log(Level.SEVERE, "doFinishLogin() accessToken = null");
         }

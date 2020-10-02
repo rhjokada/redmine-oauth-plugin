@@ -11,7 +11,7 @@ public class RedmineUser implements UserDetails {
         public RedmineUser user;
     }
 
-    public String login;
+    private String login;
     public String firstname;
     public String lastname;
     public String mail;
@@ -33,6 +33,10 @@ public class RedmineUser implements UserDetails {
     @Override
     public String getUsername() {
         return this.login;
+    }
+
+    public void setLogin(String login) {
+        this.login = login;
     }
 
     @Override
