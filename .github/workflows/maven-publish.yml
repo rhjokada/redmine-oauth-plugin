@@ -7,9 +7,16 @@ on:
   push:
     branches:
       - master
+    paths-ignore:
+      - .github/**/*
+      - .gitingore
+      - .circleci/**/*
   pull_request:
     branches:
       - master
+      - .github/**/*
+      - .gitingore
+      - .circleci/**/*
 
 jobs:
   build:
